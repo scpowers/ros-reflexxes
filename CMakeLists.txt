@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-include_directories( include )
+include_directories( include/ros-reflexxes )
 
 add_library(ReflexxesTypeII SHARED src/ReflexxesAPI.cpp
                                    src/TypeIIRMLCalculatePositionalExtrems.cpp
@@ -44,7 +44,7 @@ add_library(ReflexxesTypeII SHARED src/ReflexxesAPI.cpp
         )
 
 install( DIRECTORY include/ DESTINATION include)
-install( TARGETS libReflexxesTypeII.so DESTINATION lib)
+install( TARGETS ReflexxesTypeII DESTINATION lib)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
