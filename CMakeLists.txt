@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros-reflexxes)
+project(ros_reflexxes)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,7 +11,7 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-include_directories( include/ros-reflexxes )
+include_directories(include/ros_reflexxes)
 
 add_library(ReflexxesTypeII SHARED src/ReflexxesAPI.cpp
                                    src/TypeIIRMLCalculatePositionalExtrems.cpp
@@ -45,6 +45,8 @@ add_library(ReflexxesTypeII SHARED src/ReflexxesAPI.cpp
 
 install( DIRECTORY include/ DESTINATION include)
 install( TARGETS ReflexxesTypeII DESTINATION lib)
+
+ament_export_libraries( ReflexxesTypeII )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
